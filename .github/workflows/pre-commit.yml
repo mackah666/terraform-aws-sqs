@@ -102,7 +102,7 @@ jobs:
           curl -L "$(curl -s https://api.github.com/repos/terraform-linters/tflint/releases/latest | grep -o -E "https://.+?_linux_amd64.zip")" > tflint.zip && unzip tflint.zip && rm tflint.zip && sudo mv tflint /usr/bin/
       - name: Execute pre-commit
         env:
-          INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}     
+          INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}    # added api key
         # Run all pre-commit checks on max version supported
         if: ${{ matrix.version ==  needs.getBaseVersion.outputs.maxVersion }}
         run: pre-commit run --color=always --show-diff-on-failure --all-files
