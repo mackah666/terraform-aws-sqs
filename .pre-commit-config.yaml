@@ -6,10 +6,11 @@ repos:
       - id: terraform_docs
       - id: terraform_validate
       - id: terraform_tflint
-      - id: infracost_breakdown
-        args:
-          - --args=--path=./examples/complete/
-        verbose: true # Always show costs
+      - id: terraform_tfsec
+      # - id: infracost_breakdown
+      #   args:
+      #     - --args=--path=./examples/complete/
+      #   verbose: true # Always show costs
 
       
 
