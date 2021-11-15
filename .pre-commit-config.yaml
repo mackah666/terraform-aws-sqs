@@ -7,6 +7,12 @@ repos:
       - id: terraform_validate
       - id: terraform_tflint
       - id: terraform_tfsec
+      - id: checkov
+        args: [
+          "-d", ".",
+          "--skip-check", "CKV2_AWS_8",
+        ]
+
       # - id: terrascan
       #   pass_filenames: false
       #   args: -l=examples/complete #NOTE: this command should point to the directory containing your .tf files
