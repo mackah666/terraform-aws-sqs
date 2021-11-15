@@ -20,7 +20,7 @@ module "user_queue" {
 
 ## Examples
 
-- [SQS queues with server-side encryption (SSE) using KMS and without SSE](https://github.com/terraform-aws-modules/terraform-aws-sqs/tree/master/examples/complete)
+- [SQS queues with server-side encryption (SSE) using KMS and without SSE](https://github.com/mackah666/terraform-aws-sqs/tree/main/examples/complete)
 
 ## Conditional creation
 
