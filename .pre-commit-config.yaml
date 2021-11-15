@@ -9,7 +9,7 @@ repos:
       - id: terraform_tfsec
       - id: infracost_breakdown
         args:
-          - --args=--path=./examples/complete/
+          - --args=--path=./examples/complete
         verbose: true # Always show costs
 
       
