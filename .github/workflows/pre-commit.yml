@@ -92,6 +92,8 @@ jobs:
         uses: actions/setup-python@v2
       - name: Install Terraform v${{ matrix.version }}
         uses: hashicorp/setup-terraform@v1
+        env:
+          INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}   
         with:
           terraform_version: ${{ matrix.version }}
       - name: Install pre-commit dependencies
