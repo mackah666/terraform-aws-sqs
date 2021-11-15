@@ -101,6 +101,7 @@ jobs:
           pip install terrascan
           pip install pre-commit
           brew install tfsec
+          brew install checkov
           curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
           sudo mv /usr/local/bin/infracost /usr/bin/
           curl -Lo ./terraform-docs.tar.gz https://github.com/terraform-docs/terraform-docs/releases/download/v0.13.0/terraform-docs-v0.13.0-$(uname)-amd64.tar.gz && tar -xzf terraform-docs.tar.gz && chmod +x terraform-docs && sudo mv terraform-docs /usr/bin/
