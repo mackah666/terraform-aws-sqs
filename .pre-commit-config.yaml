@@ -6,6 +6,11 @@ repos:
       - id: terraform_docs
       - id: terraform_validate
       - id: terraform_tflint
+      - id: infracost_breakdown
+        args:
+          - --args=--path=./examples/complete
+        verbose: true # Always show costs
+
       
 
   - repo: git://github.com/pre-commit/pre-commit-hooks

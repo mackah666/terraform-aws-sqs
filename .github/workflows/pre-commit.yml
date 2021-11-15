@@ -21,6 +21,11 @@ jobs:
         run: |
           DIRS=$(python -c "import json; import glob; print(json.dumps([x.replace('/versions.tf', '') for x in glob.glob('./**/versions.tf', recursive=True)]))")
           echo "::set-output name=directories::$DIRS"
+      - name: Setup infracost creds
+        run: |
+          mkdir ~/.config/infracost
+          echo "${{ secrets.INFRACOST_CREDS }}" > ~/.config/infracost/credentials.yml
+          chmod 600 ~/.config/infracost/credentials.yml
     outputs:
       directories: ${{ steps.matrix.outputs.directories }}
 
