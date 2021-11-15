@@ -2,7 +2,9 @@ provider "aws" {
   region = "eu-west-1"
 }
 
-resource "aws_kms_key" "this" {}
+resource "aws_kms_key" "this" {
+  enable_key_rotation = true
+}
 
 
 
