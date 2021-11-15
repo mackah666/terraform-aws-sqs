@@ -92,6 +92,8 @@ jobs:
         uses: actions/setup-python@v2
       - name: Install Terraform v${{ matrix.version }}
         uses: hashicorp/setup-terraform@v1
+      - name: Terraform security scan
+        uses: triat/terraform-security-scan@v3.0.0
         with:
           terraform_version: ${{ matrix.version }}
       - name: Install pre-commit dependencies
