@@ -12,7 +12,3 @@ repos:
     rev: v3.4.0
     hooks:
       - id: check-merge-conflict
-      - id: infracost_breakdown
-        args:
-          - --args=--path=./examples/complete
-        verbose: true # Always show costs
