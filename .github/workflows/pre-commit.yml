@@ -26,6 +26,7 @@ jobs:
           mkdir ~/.config/infracost
           echo "${{ secrets.INFRACOST_CREDS }}" > ~/.config/infracost/credentials.yml
           chmod 600 ~/.config/infracost/credentials.yml
+          curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
     outputs:
       directories: ${{ steps.matrix.outputs.directories }}
 
