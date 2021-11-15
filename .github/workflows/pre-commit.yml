@@ -26,7 +26,7 @@ jobs:
           mkdir ~/.config/infracost
           echo "${{ secrets.INFRACOST_CREDS }}" > ~/.config/infracost/credentials.yml
           chmod 600 ~/.config/infracost/credentials.yml
-          curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
+  
     outputs:
       directories: ${{ steps.matrix.outputs.directories }}
 
@@ -97,6 +97,7 @@ jobs:
       - name: Install pre-commit dependencies
         run: |
           pip install pre-commit
+          curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
           curl -Lo ./terraform-docs.tar.gz https://github.com/terraform-docs/terraform-docs/releases/download/v0.13.0/terraform-docs-v0.13.0-$(uname)-amd64.tar.gz && tar -xzf terraform-docs.tar.gz && chmod +x terraform-docs && sudo mv terraform-docs /usr/bin/
           curl -L "$(curl -s https://api.github.com/repos/terraform-linters/tflint/releases/latest | grep -o -E "https://.+?_linux_amd64.zip")" > tflint.zip && unzip tflint.zip && rm tflint.zip && sudo mv tflint /usr/bin/
       - name: Execute pre-commit
