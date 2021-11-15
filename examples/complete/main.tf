@@ -7,8 +7,8 @@ resource "aws_kms_key" "this" {}
 
 
 resource "aws_kms_alias" "kms-ws-volume-alias" {
-    name          = "alias/workspace-volume"
-    target_key_id = aws_kms_key.this.key_id
+  name          = "alias/workspace-volume"
+  target_key_id = aws_kms_key.this.key_id
 }
 
 module "users_unencrypted" {
