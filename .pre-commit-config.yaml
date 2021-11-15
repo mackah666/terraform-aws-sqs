@@ -9,7 +9,7 @@ repos:
       - id: terraform_tfsec
       - id: terrascan
         pass_filenames: false
-        args: [-l=examples/complete] #NOTE: this command should point to the directory containing your .tf files
+        args: -l=examples/complete #NOTE: this command should point to the directory containing your .tf files
         verbose: true
       # - id: infracost_breakdown
       #   args:
