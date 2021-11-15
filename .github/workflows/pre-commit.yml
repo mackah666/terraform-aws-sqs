@@ -96,6 +96,8 @@ jobs:
           terraform_version: ${{ matrix.version }}
       - name: Install pre-commit dependencies
         run: |
+          sudo apt update
+          sudo apt install jq
           pip install pre-commit
           brew install tfsec
           curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
