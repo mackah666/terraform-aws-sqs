@@ -109,4 +109,6 @@ jobs:
           INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}    # added api key
         # Run all pre-commit checks on max version supported
         if: ${{ matrix.version ==  needs.getBaseVersion.outputs.maxVersion }}
-        run: pre-commit run --color=always --show-diff-on-failure --all-files
+        run: |
+          infracost breakdown --path ./examples/complete
+          pre-commit run --color=always --show-diff-on-failure --all-files
