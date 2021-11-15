@@ -47,7 +47,7 @@ resource "aws_sqs_queue_policy" "users_unencrypted_policy" {
       {
         "Effect": "Allow",
         "Principal": {
-          "AWS": "*"
+          "AWS": "arn:aws:iam::627037153118:root"
         },
         "Action": [
           "SQS:SendMessage",
